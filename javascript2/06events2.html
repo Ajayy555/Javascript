@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SetInterval & ClearInterval</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+
+</body>
+
+<script>
+let dispDate;
+let timer=0;
+    
+
+    document.querySelector('#stop').addEventListener('click',function(e){
+        clearInterval(dispDate);
+    });
+
+    document.querySelector('#start').addEventListener('click',function(e){
+        const sayDate = () => {
+         const date= new Date();
+        console.log(date.toLocaleTimeString());
+        
+    }
+    dispDate = setInterval(sayDate, 1000,"hi");
+    });
+
+</script>
+
+
+<!-- <script>
+   const changeText= setTimeout(function(){
+        console.log('5 SEC HIT');
+        document.querySelector('h1').innerHTML=" Chai aur code ke sath Settimeout()"
+        
+    },5000);
+
+document.querySelector('#stop').addEventListener('click',function (e){ 
+clearTimeout(changeText)
+})
+
+// setInterval(function(){
+//     const date=new Date();
+//  console.log(date.toLocaleTimeString());
+// },1000)
+</script> -->
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+       .container{
+        border-radius: 8px;
+        text-align: center;
+        height:max-content; 
+        width: 450px;
+        position: absolute;
+        top: 10%;
+        left: 35%;
+        padding-bottom: 10px;
+        flex-wrap: wrap;
+        background-color: grey;
+       }
+       table{
+        padding-left: 32%;
+        padding-top: 20px;
+       }
+       td{
+        color: rgb(255, 129, 11);
+        text-align: left;
+       }
+        img{
+            
+            border-radius: 50%;
+            border: 3px;
+            border-style: solid;
+            border-color: aqua;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+        }
+</style>
+<body>
+<div class="container">
+<div class="image">
+    <img></img>
+
+    <table >
+    <tr><th>User Name </td><th>:</td> <td><span id="userName"></span></td></tr>
+    <tr><th>Followers </td><th>:</td> <td><span id="Followers"></span></td></tr>
+    <tr><th>Nationality </td><th>:</td> <td><span id="nationality"></span></td></tr>
+</table>
+</div>
+</div>
+</body>
+
+<script>
+    const requestUrl='https://api.github.com/users/hiteshchoudhary';
+     const xhr=new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const  data=JSON.parse(this.responseText);
+
+               console.log(data);
+
+               document.querySelector('#nationality').innerHTML=data.location
+               document.querySelector('#userName').innerHTML=data.name
+               document.querySelector('#Followers').innerHTML=data.followers
+               document.querySelector('img').setAttribute('src',data.avatar_url);
+        }
+
+    }
+    xhr.open('GET',requestUrl);
+    xhr.send();
+</script>
+</html>

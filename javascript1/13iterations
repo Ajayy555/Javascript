@@ -1,0 +1,84 @@
+// for(let i=1;i<=5;i++)
+//     {
+//         console.log(i);
+//     }
+// let age=17  
+//     do{
+//         console.log(age);
+// //         age++;
+// //     }while(age>18 && age <20);
+
+// //         while(age>=18 && age <20){
+// //             console.log(age)
+// //         age++;
+// //         }
+
+
+    
+ const myarr=["isha","ajay","harsh","happu","badal","anshika"];
+// for (const nm of myarr) {
+//     console.log(nm);
+// }
+
+// const greet="Hello World";
+// for (const gt of greet) {
+//     if(gt==" ")
+//         continue;
+//     console.log(gt);
+// }
+
+// maps 
+const map =new Map();           // map Iteration
+map.set('IN',"India");
+map.set('PAK',"Pakistan");
+map.set('US',"united States");
+
+for (const [key, value] of map) {
+    console.log(key ,':- ',value);
+    
+}
+
+const myGames ={            //object iteration
+    game1: 'GTA V',
+    game2: 'Prince of persia',
+    game3: 'Asphalt Nitro'
+}
+
+for (const key in myGames) {
+    console.log(key,' : ',myGames[key]);
+}
+
+// for (const arr in myarr) {          //KEY RETURNED IN FOR IN LOOP
+//     console.log(myarr[arr]);
+// }
+
+// for (const key in map) {  //not iterative 
+//     console.log(key);
+// }
+
+myarr.forEach(element => {
+    console.log(element);
+});
+
+const mobilePrice=[
+    {
+        MobileName:"Samsung",
+        MobileModel:"Samsung Galaxy S8",
+        MobilePrice:"45999"
+    },
+    {
+        MobileName:"Redmi",
+        MobileModel:"Redmi Note 11 Pro",
+        MobilePrice:"22950"
+    },
+    {
+        MobileName:"Realmi",
+        MobileModel:"Realme 13 pro",
+        MobilePrice:"25999"
+    },
+    
+]
+
+mobilePrice.forEach((values  )=>{
+    console.log(values);
+});
